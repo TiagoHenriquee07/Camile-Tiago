@@ -158,18 +158,13 @@ function setupMusicControls() {
     const backgroundMusic = document.getElementById('backgroundMusic');
     
     if (musicToggle && backgroundMusic) {
-        // Tentar reproduzir a música automaticamente (com interação do usuário)
-        document.addEventListener('click', function initMusic() {
-            backgroundMusic.volume = 0.3;
-            backgroundMusic.play().catch(e => {
-                console.log('Reprodução automática bloqueada:', e);
-            });
-            document.removeEventListener('click', initMusic);
-        }, { once: true });
-        
+        backgroundMusic.volume = 0.3;
+
         musicToggle.addEventListener('click', function() {
             if (backgroundMusic.paused) {
-                backgroundMusic.play();
+                backgroundMusic.play().catch(e => {
+                    console.log('Erro ao tocar música:', e);
+                });
                 musicToggle.classList.add('playing');
                 musicToggle.querySelector('.music-text').textContent = 'Música: Ligada';
             } else {

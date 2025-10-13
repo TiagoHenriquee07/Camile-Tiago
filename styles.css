@@ -737,27 +737,6 @@ body {
     overflow: hidden;
 }
 
-.black-hole {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8) 70%);
-    border-radius: 50%;
-    animation: blackHole 10s linear infinite;
-}
-
-@keyframes blackHole {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
 .message-text {
     font-size: 1.3rem;
     line-height: 1.8;
