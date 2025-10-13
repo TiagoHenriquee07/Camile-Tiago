@@ -152,18 +152,18 @@ function createGalleryItem(item, index) {
     return itemElement;
 }
 
-// Controles de Música
+// Controles de Música (Função Simplificada e Corrigida)
 function setupMusicControls() {
     const musicToggle = document.getElementById('musicToggle');
     const backgroundMusic = document.getElementById('backgroundMusic');
     
     if (musicToggle && backgroundMusic) {
-        backgroundMusic.volume = 0.3;
+        backgroundMusic.volume = 0.3; // Define o volume
 
         musicToggle.addEventListener('click', function() {
             if (backgroundMusic.paused) {
                 backgroundMusic.play().catch(e => {
-                    console.log('Erro ao tocar música:', e);
+                    console.error("Erro ao tentar tocar a música:", e);
                 });
                 musicToggle.classList.add('playing');
                 musicToggle.querySelector('.music-text').textContent = 'Música: Ligada';
@@ -173,11 +173,9 @@ function setupMusicControls() {
                 musicToggle.querySelector('.music-text').textContent = 'Música: Desligada';
             }
         });
-        
-        // Atualizar texto inicial
-        musicToggle.querySelector('.music-text').textContent = 'Música: Ligar';
     }
 }
+
 
 // Modal de Frases de Amor
 function setupModal() {
