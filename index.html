@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiago & Camile - Amor Cósmico</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Áudio de Fundo -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://assets.codepen.io/1468070/Interstellar-Theme-Hans-Zimmer.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <!-- Controle de Áudio -->
+    <div class="music-controls">
+        <button id="musicToggle" class="music-btn">
+            <span class="music-icon">🎵</span>
+            <span class="music-text">Música: Ligar</span>
+        </button>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="galaxy-background">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+        <div class="nebula"></div>
+        <div class="shooting-stars"></div>
+    </div>
+
+    <!-- Header Principal -->
+    <header class="header" id="mainHeader">
+        <div class="header-content">
+            <div class="logo" id="homeLogo">
+                <h1>Tiago & Camile</h1>
+                <p>Amor Cósmico</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">Navegar pela Galáxia</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#frase" class="nav-link">Nossa Constelação</a></li>
+                <li><a href="#galeria" class="nav-link">Galeria Estelar</a></li>
+                <li><a href="#timeline" class="nav-link">Linha do Tempo</a></li>
+                <li><a href="#mensagem" class="nav-link">Mensagem Cósmica</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <div class="cosmic-title">
+                    <div class="planet-orbit">
+                        <div class="planet"></div>
+                    </div>
+                    <div class="names-display">
+                        <h1 class="name tiago">Tiago</h1>
+                        <div class="heart-divider">
+                            <div class="heart-pulse"></div>
+                        </div>
+                        <h1 class="name camile">Camile</h1>
+                    </div>
+                    <div class="planet-orbit orbit-2">
+                        <div class="planet planet-2"></div>
+                    </div>
+                </div>
+                <p class="hero-subtitle">Uma história escrita nas estrelas</p>
+                <div class="cosmic-scroll">
+                    <div class="scroll-indicator">
+                        <div class="scroll-line"></div>
+                    </div>
+                    <p class="scroll-text">Explorar a Galáxia</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section id="frase" class="quote-section">
+            <div class="container">
+                <div class="quote-card">
+                    <div class="constellation"></div>
+                    <div class="quote-mark start">"</div>
+                    <h2 class="quote-text">No vasto universo, você é minha estrela guia</h2>
+                    <div class="quote-mark end">"</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Galeria Estelar</h2>
+                <p class="section-subtitle">Momentos capturados na imensidão do cosmos</p>
+                <div class="masonry-grid" id="galleryGrid">
+                    <!-- Gallery items serão gerados via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <h2 class="section-title">Nossa Jornada Cósmica</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Colisão de Galáxias</h3>
+                            <p>Quando nossos universos se encontraram pela primeira vez</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Supernova do Amor</h3>
+                            <p>O momento explosivo que iluminou nossos corações</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Órbita Perfeita</h3>
+                            <p>Encontrando nosso ritmo no balé cósmico</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Eternidade Cósmica</h3>
+                            <p>Nosso amor transcende o tempo e espaço</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section id="mensagem" class="message-section">
+            <div class="container">
+                <div class="message-card">
+                    <div class="black-hole"></div>
+                    <p class="message-text">
+                        Como um buraco negro atrai toda a luz ao seu redor, você atrai todo o meu ser.
+                        No vasto vazio do cosmos, você é a matéria que preenche minha existência.
+                        Nosso amor é a força gravitacional que mantém meu universo unido.
+                    </p>
+                    <div class="signature">
+                        <span class="signature-line"></span>
+                        <span class="signature-text">Para toda a eternidade, Tiago & Camile</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Love Message Modal -->
+    <div class="love-modal" id="loveModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <div class="cosmic-heart">✨</div>
+                <p class="love-message" id="loveMessage"></p>
+                <button class="close-modal" id="closeModal">
+                    <span>Voltar à Galeria</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
