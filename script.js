@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupHeaderNavigation();
     setupSmoothScrolling();
     setupMobileNavigation();
-    setupMusicControls();
+    setupEntry(); // <-- LINHA ALTERADA
     setupAnimations();
     createShootingStars();
     typeWriterEffect();
@@ -153,25 +153,26 @@ function createGalleryItem(item, index) {
 }
 
 // Controles de Música (Função Simplificada e Corrigida)
-function setupMusicControls() {
-    const musicToggle = document.getElementById('musicToggle');
+// Nova função de entrada (substitua a antiga)
+function setupEntry() {
+    const entryOverlay = document.getElementById('entryOverlay');
+    const enterButton = document.getElementById('enterButton');
     const backgroundMusic = document.getElementById('backgroundMusic');
-    
-    if (musicToggle && backgroundMusic) {
-        backgroundMusic.volume = 0.3; // Define o volume
 
-        musicToggle.addEventListener('click', function() {
-            if (backgroundMusic.paused) {
-                backgroundMusic.play().catch(e => {
-                    console.error("Erro ao tentar tocar a música:", e);
-                });
-                musicToggle.classList.add('playing');
-                musicToggle.querySelector('.music-text').textContent = 'Música: Ligada';
-            } else {
-                backgroundMusic.pause();
-                musicToggle.classList.remove('playing');
-                musicToggle.querySelector('.music-text').textContent = 'Música: Desligada';
-            }
+    if (enterButton && backgroundMusic && entryOverlay) {
+        backgroundMusic.volume = 0.3;
+
+        enterButton.addEventListener('click', () => {
+            // Toca a música
+            backgroundMusic.play().catch(e => console.error("Música bloqueada:", e));
+
+            // Faz a tela de entrada desaparecer
+            entryOverlay.style.opacity = '0';
+
+            // Remove a tela após a animação para não atrapalhar os cliques
+            setTimeout(() => {
+                entryOverlay.style.display = 'none';
+            }, 1000); // 1000ms = 1 segundo (mesmo tempo da transição do CSS)
         });
     }
 }

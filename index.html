@@ -10,17 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="entryOverlay">
+        <div class="entry-content">
+            <h1>Tiago & Camile</h1>
+            <p>Uma história escrita nas estrelas</p>
+            <button id="enterButton">✨ Entrar no Universo ✨</button>
+        </div>
+    </div>
+
     <audio id="backgroundMusic" loop>
         <source src="audio/audio.mpeg" type="audio/mpeg">
         Seu navegador não suporta áudio.
     </audio>
-
-    <div class="music-controls">
-        <button id="musicToggle" class="music-btn">
-            <span class="music-icon">🎵</span>
-            <span class="music-text">Música: Ligar</span>
-        </button>
-    </div>
 
     <div class="galaxy-background">
         <div class="stars"></div>
@@ -103,7 +104,7 @@
                 <h2 class="section-title">Galeria Estelar</h2>
                 <p class="section-subtitle">Momentos capturados na imensidão do cosmos</p>
                 <div class="masonry-grid" id="galleryGrid">
-                    </div>
+                </div>
             </div>
         </section>
 
