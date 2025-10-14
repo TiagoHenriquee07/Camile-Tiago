@@ -329,7 +329,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* NOVO CSS PARA ALINHAR O CORAÇÃO */
+/* ESTILO ADICIONADO PARA ALINHAR O CORAÇÃO */
 .names-display {
     display: flex;
     align-items: center;
@@ -781,7 +781,7 @@ body {
 }
 
 
-
+/* NOVOS ESTILOS PARA A CARTA */
 .letter-section {
     padding: 6rem 0;
 }
@@ -792,26 +792,26 @@ body {
     color: var(--text);
     margin-bottom: 1.5rem;
     text-align: left;
-    text-indent: 2rem; 
+    text-indent: 2rem; /* Adiciona parágrafo */
 }
 
 .letter-text:first-of-type {
-    text-indent: 0; 
+    text-indent: 0; /* Sem indentação no primeiro parágrafo */
     font-weight: bold;
-    font-size: 1.3rem; 
+    font-size: 1.3rem; /* Destaca a saudação */
     font-family: 'Playfair Display', serif;
 }
 
 .letter-section .message-card {
-    padding: 3rem 4rem; 
-    text-align: left; 
+    padding: 3rem 4rem; /* Um pouco mais de padding */
+    text-align: left; /* Alinha tudo à esquerda */
 }
 
 .letter-section .signature {
-    align-items: flex-end; 
+    align-items: flex-end; /* Alinha a assinatura à direita */
     margin-top: 2rem;
 }
-
+/* FIM DOS NOVOS ESTILOS DA CARTA */
 
 
 /* Modal de Frases de Amor */
