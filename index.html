@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
-    
     <title>Tiago & Camile - Amor Cósmico</title>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    </body>
-</html>
-<body>
+
     <div id="entryOverlay">
         <div class="entry-content">
             <h1>Tiago & Camile</h1>
@@ -33,9 +27,9 @@
     </audio>
 
     <div class="galaxy-background">
-        <div class="stars"></div>
-        <div class="stars2"></div>
-        <div class="stars3"></div>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
         <div class="nebula"></div>
         <div class="shooting-stars"></div>
     </div>
@@ -61,6 +55,7 @@
                 <li><a href="#galeria" class="nav-link">Galeria Estelar</a></li>
                 <li><a href="#timeline" class="nav-link">Linha do Tempo</a></li>
                 <li><a href="#mensagem" class="nav-link">Mensagem Cósmica</a></li>
+                <li><a href="#timer" class="nav-link">Nosso Tempo</a></li>
             </ul>
             <div class="nav-toggle">
                 <span></span>
@@ -133,12 +128,13 @@
                 </div>
             </div>
         </section>
+
         <section id="frase" class="quote-section">
             <div class="container">
                 <div class="quote-card">
                     <div class="constellation"></div>
                     <div class="quote-mark start">"</div>
-                    <h2 class="quote-text">Voçê é a Minha Mais Bela Poesia</h2>
+                    <h2 class="quote-text">Você é a Minha Mais Bela Poesia</h2>
                     <div class="quote-mark end">"</div>
                 </div>
             </div>
@@ -147,7 +143,7 @@
         <section id="galeria" class="gallery-section">
             <div class="container">
                 <h2 class="section-title">Galeria Estelar</h2>
-                <p class="section-subtitle">Momentos capturados na imensidão do cosmos</p>
+                <p class="section-subtitle">Passe o mouse ou clique para revelar uma mensagem cósmica</p>
                 <div class="masonry-grid" id="galleryGrid">
                 </div>
             </div>
@@ -204,20 +200,19 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <div class="love-modal" id="loveModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-content">
-                <div class="cosmic-heart">✨</div>
-                <p class="love-message" id="loveMessage"></p>
-                <button class="close-modal" id="closeModal">
-                    <span>Voltar à Galeria</span>
-                </button>
+        <section id="timer" class="timer-section">
+            <div class="container">
+                <h2 class="section-title">Nosso Tempo Juntos</h2>
+                <div class="timer-card">
+                    <div id="countdown" class="countdown-container">
+                        </div>
+                    <p class="timer-subtitle">... e contando cada segundo dessa jornada infinita.</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+    </main>
 
     <script src="./script.js"></script>
 </body>

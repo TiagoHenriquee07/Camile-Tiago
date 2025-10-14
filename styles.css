@@ -28,6 +28,57 @@ body {
     overflow-x: hidden;
 }
 
+/* EFEITO DE ESTRELAS APRIMORADO */
+/* === EFEITO DE ESTRELAS CORRIGIDO (CSS PURO) === */
+@keyframes move-stars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#stars {
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><circle cx="0.5" cy="0.5" r="0.5" fill="white"/></svg>') repeat;
+    background-size: 1px 1px;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, white, transparent),
+        radial-gradient(1px 1px at 70px 80px, white, transparent),
+        radial-gradient(1px 1px at 150px 120px, white, transparent);
+    background-size: 200px 200px;
+    animation: move-stars 200s linear infinite;
+}
+
+#stars2 {
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2"><circle cx="1" cy="1" r="1" fill="white"/></svg>') repeat;
+    background-size: 2px 2px;
+    background-image: 
+        radial-gradient(2px 2px at 40px 70px, white, transparent),
+        radial-gradient(2px 2px at 90px 20px, white, transparent),
+        radial-gradient(2px 2px at 180px 150px, white, transparent);
+    background-size: 400px 400px;
+    animation: move-stars 150s linear infinite;
+}
+
+#stars3 {
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="3" height="3"><circle cx="1.5" cy="1.5" r="1.5" fill="white"/></svg>') repeat;
+    background-size: 3px 3px;
+    background-image: 
+        radial-gradient(3px 3px at 50px 160px, white, transparent),
+        radial-gradient(3px 3px at 250px 90px, white, transparent);
+    background-size: 600px 600px;
+    animation: move-stars 100s linear infinite;
+}
+
+
 /* Galaxy Background */
 .galaxy-background {
     position: fixed;
@@ -36,36 +87,9 @@ body {
     width: 100%;
     height: 100%;
     z-index: -3;
+    overflow: hidden; 
 }
 
-.stars, .stars2, .stars3 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.stars {
-    background: transparent;
-    animation: twinkle 4s ease-in-out infinite alternate;
-}
-
-.stars2 {
-    background: transparent;
-    animation: twinkle 6s ease-in-out infinite alternate-reverse;
-}
-
-.stars3 {
-    background: transparent;
-    animation: twinkle 8s ease-in-out infinite alternate;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.3; }
-    100% { opacity: 0.8; }
-}
 
 .nebula {
     position: absolute;
@@ -135,40 +159,6 @@ body {
     }
 }
 
-/* Music Controls */
-.music-controls {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-}
-
-.music-btn {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--starlight);
-    padding: 10px 15px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.music-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
-
-.music-btn.playing {
-    background: rgba(99, 102, 241, 0.3);
-    border-color: var(--primary);
-}
-
-/* Header Principal */
 .header {
     position: fixed;
     top: 0;
@@ -216,10 +206,9 @@ body {
     text-transform: uppercase;
 }
 
-/* Navigation */
 .navbar {
     position: fixed;
-    top: 80px; /* Ajuste se o seu header tiver altura diferente */
+    top: 80px; 
     left: 0;
     width: 100%;
     background: rgba(26, 26, 46, 0.6);
@@ -275,7 +264,7 @@ body {
 }
 
 .nav-link:hover::after,
-.nav-link.active::after { /* Adicionado .active para o JS */
+.nav-link.active::after { 
     width: 100%;
 }
 
@@ -293,7 +282,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Main Content */
 .main-content {
     position: relative;
     z-index: 1;
@@ -305,7 +293,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Hero Section */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -329,12 +316,11 @@ body {
     flex-wrap: wrap;
 }
 
-/* ESTILO ADICIONADO PARA ALINHAR O CORAÇÃO */
 .names-display {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem; /* Ajuste o espaçamento como preferir */
+    gap: 2rem; 
 }
 
 .planet-orbit {
@@ -366,12 +352,8 @@ body {
 }
 
 @keyframes orbit {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .name {
@@ -388,13 +370,8 @@ body {
     text-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
 }
 
-.name.tiago {
-    animation-delay: 0.2s;
-}
-
-.name.camile {
-    animation-delay: 0.4s;
-}
+.name.tiago { animation-delay: 0.2s; }
+.name.camile { animation-delay: 0.4s; }
 
 .heart-divider {
     position: relative;
@@ -446,45 +423,23 @@ body {
 }
 
 @keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+    to { opacity: 1; }
 }
-
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
-    }
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 40px rgba(99, 102, 241, 0.8);
-    }
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+    50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(99, 102, 241, 0.8); }
 }
-
 @keyframes scrollLine {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateY(20px);
-        opacity: 1;
-    }
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(20px); opacity: 1; }
 }
 
-/* Quote Section */
 .quote-section {
     padding: 8rem 0;
 }
-
 .quote-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
@@ -497,7 +452,6 @@ body {
     margin: 0 auto;
     overflow: hidden;
 }
-
 .constellation {
     position: absolute;
     top: 0;
@@ -510,7 +464,6 @@ body {
         radial-gradient(1px 1px at 40% 20%, var(--accent), transparent);
     opacity: 0.3;
 }
-
 .quote-mark {
     font-size: 4rem;
     color: var(--primary-light);
@@ -518,17 +471,8 @@ body {
     position: absolute;
     font-family: 'Playfair Display', serif;
 }
-
-.quote-mark.start {
-    top: 2rem;
-    left: 3rem;
-}
-
-.quote-mark.end {
-    bottom: 2rem;
-    right: 3rem;
-}
-
+.quote-mark.start { top: 2rem; left: 3rem; }
+.quote-mark.end { bottom: 2rem; right: 3rem; }
 .quote-text {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
@@ -542,11 +486,9 @@ body {
     z-index: 2;
 }
 
-/* Gallery Section */
 .gallery-section {
     padding: 6rem 0;
 }
-
 .section-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -557,7 +499,6 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .section-subtitle {
     text-align: center;
     color: var(--text-secondary);
@@ -565,7 +506,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Masonry Grid Layout */
 .masonry-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -591,88 +531,92 @@ body {
         0 0 30px rgba(99, 102, 241, 0.3);
 }
 
-/* Diferentes tamanhos para o efeito masonry */
-.masonry-item:nth-child(3n) {
-    grid-row: span 2;
-}
-
-.masonry-item:nth-child(5n) {
-    grid-row: span 2;
-}
-
-.masonry-item:nth-child(7n) {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-.masonry-item:nth-child(11n) {
-    grid-row: span 2;
-}
+/
+.masonry-item:nth-child(3n) { grid-row: span 2; }
+.masonry-item:nth-child(5n) { grid-row: span 2; }
+.masonry-item:nth-child(7n) { grid-column: span 1; grid-row: span 2; }
+.masonry-item:nth-child(11n) { grid-row: span 2; }
 
 .masonry-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
     transition: transform 0.4s ease;
 }
 
-.masonry-item:hover .masonry-image {
+.masonry-item:hover .masonry-image,
+.masonry-item.active .masonry-image {
     transform: scale(1.1);
 }
 
 .masonry-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-    padding: 2rem 1rem 1rem;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.95));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-.masonry-item:hover .masonry-overlay {
-    transform: translateY(0);
+.masonry-item:hover .masonry-overlay,
+.masonry-item.active .masonry-overlay {
+    opacity: 1;
 }
 
 .masonry-caption {
     color: white;
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    margin-bottom: 0.5rem;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.click-hint {
-    text-align: center;
-}
-
-.click-hint span {
-    color: var(--primary-light);
-    font-size: 0.8rem;
+.masonry-message {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    color: var(--starlight);
+    font-size: 0.95rem;
+    line-height: 1.5;
     font-style: italic;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
 }
+
+.masonry-item:hover .masonry-caption,
+.masonry-item.active .masonry-caption {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.masonry-item:hover .masonry-message,
+.masonry-item.active .masonry-message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-/* Timeline Section */
-.timeline-section {
-    padding: 8rem 0;
-}
-
+.timeline-section { padding: 8rem 0; }
 .timeline {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
 }
-
 .timeline::before {
     content: '';
     position: absolute;
@@ -682,13 +626,11 @@ body {
     width: 2px;
     background: var(--gradient);
 }
-
 .timeline-item {
     position: relative;
     margin-bottom: 4rem;
     padding-left: 80px;
 }
-
 .timeline-marker {
     position: absolute;
     left: 20px;
@@ -701,7 +643,6 @@ body {
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
     animation: pulse 2s ease-in-out infinite;
 }
-
 .timeline-content {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
@@ -710,29 +651,22 @@ body {
     padding: 2rem;
     transition: all 0.3s ease;
 }
-
 .timeline-content:hover {
     transform: translateX(10px);
     border-color: rgba(99, 102, 241, 0.3);
 }
-
 .timeline-content h3 {
     color: var(--primary-light);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
     font-family: 'Playfair Display', serif;
 }
-
 .timeline-content p {
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
-/* Message Section */
-.message-section {
-    padding: 8rem 0;
-}
-
+.message-section { padding: 8rem 0; }
 .message-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
@@ -745,7 +679,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 .message-text {
     font-size: 1.3rem;
     line-height: 1.8;
@@ -756,6 +689,81 @@ body {
     z-index: 2;
 }
 
+.timer-section {
+    padding: 6rem 0 8rem;
+    text-align: center;
+}
+.timer-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.countdown-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    min-width: 100px;
+}
+.countdown-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.countdown-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.timer-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.letter-section { padding: 6rem 0; }
+.letter-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    text-indent: 2rem; 
+}
+.letter-text:first-of-type {
+    text-indent: 0;
+    font-weight: bold;
+    font-size: 1.3rem; 
+    font-family: 'Playfair Display', serif;
+}
+.letter-section .message-card {
+    padding: 3rem 4rem; 
+    text-align: left; 
+}
+.letter-section .signature {
+    align-items: flex-end; 
+    margin-top: 2rem;
+}
 .signature {
     display: flex;
     flex-direction: column;
@@ -764,13 +772,11 @@ body {
     position: relative;
     z-index: 2;
 }
-
 .signature-line {
     width: 100px;
     height: 1px;
     background: var(--gradient);
 }
-
 .signature-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
@@ -780,288 +786,50 @@ body {
     background-clip: text;
 }
 
-
-/* NOVOS ESTILOS PARA A CARTA */
-.letter-section {
-    padding: 6rem 0;
-}
-
-.letter-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--text);
-    margin-bottom: 1.5rem;
-    text-align: left;
-    text-indent: 2rem; /* Adiciona parágrafo */
-}
-
-.letter-text:first-of-type {
-    text-indent: 0; /* Sem indentação no primeiro parágrafo */
-    font-weight: bold;
-    font-size: 1.3rem; /* Destaca a saudação */
-    font-family: 'Playfair Display', serif;
-}
-
-.letter-section .message-card {
-    padding: 3rem 4rem; /* Um pouco mais de padding */
-    text-align: left; /* Alinha tudo à esquerda */
-}
-
-.letter-section .signature {
-    align-items: flex-end; /* Alinha a assinatura à direita */
-    margin-top: 2rem;
-}
-/* FIM DOS NOVOS ESTILOS DA CARTA */
-
-
-/* Modal de Frases de Amor */
-.love-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.love-modal.active {
-    display: flex;
-}
-
-.modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-}
-
-.modal-container {
-    position: relative;
-    max-width: 500px;
-    width: 100%;
-    animation: modalSlideIn 0.4s ease;
-}
-
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.modal-content {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 24px;
-    padding: 3rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.modal-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--gradient);
-    animation: borderGlow 2s ease-in-out infinite;
-}
-
-@keyframes borderGlow {
-    0%, 100% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-.cosmic-heart {
-    font-size: 4rem;
-    margin-bottom: 2rem;
-    animation: cosmicPulse 2s ease-in-out infinite;
-}
-
-@keyframes cosmicPulse {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
-        filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
-    }
-    50% {
-        transform: scale(1.1) rotate(180deg);
-        filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
-    }
-}
-
-.love-message {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    color: var(--text);
-    margin-bottom: 2rem;
-    font-style: italic;
-    font-weight: 300;
-}
-
-.close-modal {
-    background: var(--gradient);
-    border: none;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-.close-modal:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-    .header {
-        padding: 1rem 0;
-    }
-    
-    .logo h1 {
-        font-size: 1.5rem;
-    }
-    
-    .logo p {
-        font-size: 0.8rem;
-    }
-    
-    .navbar {
-        top: 60px; /* Ajustado para o novo header padding */
-    }
-    
+    .header { padding: 1rem 0; }
+    .logo h1 { font-size: 1.5rem; }
+    .logo p { font-size: 0.8rem; }
+    .navbar { top: 60px; }
     .nav-menu {
         position: fixed;
-        top: 104px; /* Ajustado para o novo header/nav */
+        top: 104px;
         left: 0;
         width: 100%;
         background: rgba(10, 10, 26, 0.95);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
-        transform: translateY(-150%); /* Ajustado para sair da tela */
+        transform: translateY(-150%);
         transition: transform 0.3s ease;
         backdrop-filter: blur(20px);
     }
-
-    .nav-menu.active {
-        transform: translateY(0);
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .hero-section {
-        padding: 7rem 1rem 1rem;
-    }
-    
-    .cosmic-title {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    /* MODIFICAÇÃO: Alinhar nomes e coração no mobile */
-    .names-display {
-        flex-direction: column; /* Coloca um em cima do outro */
-        gap: 1rem; /* Espaçamento menor */
-    }
-    
-    .planet-orbit {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item {
-        padding-left: 60px;
-    }
-
-    .timeline-marker {
-        left: 10px;
-    }
-
-    .quote-card,
-    .message-card {
-        padding: 3rem 1.5rem;
-    }
-    
-    .love-message {
-        font-size: 1.1rem;
-    }
-    
-    .modal-container {
-        margin: 1rem;
-    }
-    
-    .masonry-grid {
+    .nav-menu.active { transform: translateY(0); }
+    .nav-toggle { display: flex; }
+    .hero-section { padding: 7rem 1rem 1rem; }
+    .cosmic-title { flex-direction: column; gap: 2rem; }
+    .names-display { flex-direction: column; gap: 1rem; }
+    .planet-orbit { width: 60px; height: 60px; }
+    .timeline::before { left: 20px; }
+    .timeline-item { padding-left: 60px; }
+    .timeline-marker { left: 10px; }
+    .quote-card, .message-card { padding: 3rem 1.5rem; }
+    .masonry-grid { 
         grid-template-columns: 1fr;
-        grid-auto-rows: 250px;
+        grid-auto-rows: 250px; 
     }
-    
-    .masonry-item:nth-child(n) {
+   
+    .masonry-item:nth-child(n) { 
         grid-row: span 1;
         grid-column: span 1;
     }
-    
-    .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    .music-controls {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .music-btn {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-    }
-    
-    /* Ajustes responsivos para a carta */
-    .letter-section .message-card {
-        padding: 2.5rem 1.5rem;
-    }
-    
-    .letter-text {
-        font-size: 1rem;
-        text-indent: 1.5rem;
-    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+    .letter-section .message-card { padding: 2.5rem 1.5rem; }
+    .letter-text { font-size: 1rem; text-indent: 1.5rem; }
 }
-/* Estilo da Tela de Entrada (NOVO) */
+
 #entryOverlay {
     position: fixed;
     top: 0;
@@ -1075,13 +843,11 @@ body {
     align-items: center;
     transition: opacity 1s ease;
 }
-
 .entry-content {
     text-align: center;
     color: var(--starlight);
     animation: fadeIn 2s ease;
 }
-
 .entry-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 6vw, 4rem);
@@ -1091,13 +857,11 @@ body {
     background-clip: text;
     margin-bottom: 1rem;
 }
-
 .entry-content p {
     font-size: 1.2rem;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
 }
-
 #enterButton {
     background: var(--gradient);
     border: none;
@@ -1110,7 +874,6 @@ body {
     transition: all 0.3s ease;
     animation: pulse 2s ease-in-out infinite 2s;
 }
-
 #enterButton:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);

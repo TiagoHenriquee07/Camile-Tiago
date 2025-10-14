@@ -104,53 +104,68 @@ const galleryData = [
 // Inicialização
 document.addEventListener('DOMContentLoaded', function () {
     initializeGallery();
-    setupModal();
     setupHeaderNavigation();
     setupSmoothScrolling();
     setupMobileNavigation();
-    setupEntry(); // <-- LINHA ALTERADA
+    setupEntry();
     setupAnimations();
-    createShootingStars();
-    typeWriterEffect();
+    setupTogetherTimer();
     preloadImages();
 });
 
-//iniciar a galeria
-
+// Iniciar a galeria
 function initializeGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
     galleryData.forEach((item, index) => {
         const galleryItem = createGalleryItem(item, index);
         galleryGrid.appendChild(galleryItem);
     });
+
+    // Adiciona lógica de clique para mobile
+    const allItems = document.querySelectorAll('.masonry-item');
+    allItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Se já está ativo, o clique o desativa
+            if (this.classList.contains('active')) {
+                this.classList.remove('active');
+            } else {
+                // Remove a classe de todos os outros itens
+                allItems.forEach(otherItem => otherItem.classList.remove('active'));
+                // Adiciona a classe apenas no item clicado
+                this.classList.add('active');
+            }
+            e.stopPropagation(); 
+        });
+    });
+
+    // Clicar em qualquer lugar fora das imagens fecha a mensagem ativa
+    document.body.addEventListener('click', function() {
+        allItems.forEach(item => item.classList.remove('active'));
+    });
 }
+
 
 function createGalleryItem(item, index) {
     const itemElement = document.createElement('div');
     itemElement.className = 'masonry-item';
     itemElement.setAttribute('data-index', index);
 
-    // Adicionar delay aleatório para animação
     const delay = Math.random() * 0.5;
     itemElement.style.animationDelay = `${delay}s`;
 
+    // efeito hover/clique
     itemElement.innerHTML = `
         <img src="${item.image}" alt="${item.caption}" class="masonry-image" loading="lazy">
         <div class="masonry-overlay">
             <p class="masonry-caption">${item.caption}</p>
-            <div class="click-hint">
-                <span>Clique para mensagem cósmica</span>
-            </div>
+            <p class="masonry-message">${item.message}</p>
         </div>
     `;
-
-    itemElement.addEventListener('click', () => showLoveMessage(item.message));
-
+    
     return itemElement;
 }
 
-// Controles de Música (Função Simplificada e Corrigida)
-// Nova função de entrada (substitua a antiga)
+
 function setupEntry() {
     const entryOverlay = document.getElementById('entryOverlay');
     const enterButton = document.getElementById('enterButton');
@@ -160,102 +175,32 @@ function setupEntry() {
         backgroundMusic.volume = 0.3;
 
         enterButton.addEventListener('click', () => {
-            // Toca a música
             backgroundMusic.play().catch(e => console.error("Música bloqueada:", e));
-
-            // Faz a tela de entrada desaparecer
             entryOverlay.style.opacity = '0';
-
-            // Remove a tela após a animação para não atrapalhar os cliques
             setTimeout(() => {
                 entryOverlay.style.display = 'none';
-            }, 1000); // 1000ms = 1 segundo (mesmo tempo da transição do CSS)
+            }, 1000);
         });
-    }
-}
-
-
-// Modal de Frases de Amor
-function setupModal() {
-    const modal = document.getElementById('loveModal');
-    const closeModal = document.getElementById('closeModal');
-    const modalOverlay = document.querySelector('.modal-overlay');
-
-    if (closeModal) {
-        closeModal.addEventListener('click', closeLoveModal);
-    }
-
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', closeLoveModal);
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeLoveModal();
-        }
-    });
-}
-
-function showLoveMessage(message) {
-    const modal = document.getElementById('loveModal');
-    const loveMessage = document.getElementById('loveMessage');
-
-    if (!modal || !loveMessage) {
-        console.error('Modal elements not found');
-        return;
-    }
-
-    loveMessage.textContent = message;
-    modal.classList.add('active');
-
-    // Desabilitar scroll da página
-    document.body.style.overflow = 'hidden';
-
-    // Efeito de partículas estelares
-    createStarParticles();
-}
-
-function closeLoveModal() {
-    const modal = document.getElementById('loveModal');
-
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-
     }
 }
 
 // Navegação do Header
 function setupHeaderNavigation() {
     const homeLogo = document.getElementById('homeLogo');
-
     if (homeLogo) {
-        homeLogo.addEventListener('click', scrollToTop);
+        homeLogo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
-}
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 }
 
 // Scroll Suave
 function setupSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    navLinks.forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-
             if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
@@ -273,7 +218,6 @@ function setupMobileNavigation() {
             navMenu.classList.toggle('active');
         });
 
-        // Fechar menu ao clicar nos links
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
@@ -283,13 +227,8 @@ function setupMobileNavigation() {
     }
 }
 
-// Animações
-function setupAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
 
+function setupAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -297,10 +236,9 @@ function setupAnimations() {
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Observar elementos para animação
-    const animatedElements = document.querySelectorAll('.masonry-item, .timeline-item, .quote-card, .message-card');
+    const animatedElements = document.querySelectorAll('.masonry-item, .timeline-item, .quote-card, .timer-card, .message-card, .letter-section .message-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -309,93 +247,7 @@ function setupAnimations() {
     });
 }
 
-// Estrelas Cadentes
-function createShootingStars() {
-    const shootingStars = document.querySelector('.shooting-stars');
-
-    for (let i = 0; i < 5; i++) {
-        setTimeout(() => {
-            createShootingStar(shootingStars);
-        }, i * 3000);
-    }
-
-    setInterval(() => {
-        createShootingStar(shootingStars);
-    }, 8000);
-}
-
-function createShootingStar(container) {
-    const star = document.createElement('div');
-    star.style.cssText = `
-        position: absolute;
-        background: linear-gradient(90deg, transparent, white, transparent);
-        width: ${Math.random() * 80 + 40}px;
-        height: 2px;
-        top: ${Math.random() * 100}%;
-        left: -100px;
-        animation: shootingStar ${Math.random() * 3 + 5}s linear forwards;
-        opacity: 0;
-    `;
-
-    container.appendChild(star);
-
-    setTimeout(() => {
-        star.remove();
-    }, 8000);
-}
-
-// Efeito de Partículas Estelares no Modal
-function createStarParticles() {
-    const modalContent = document.querySelector('.modal-content');
-    if (!modalContent) return;
-
-    // Limpar partículas anteriores
-    const existingParticles = modalContent.querySelectorAll('.star-particle');
-    existingParticles.forEach(particle => particle.remove());
-
-    for (let i = 0; i < 15; i++) {
-        setTimeout(() => {
-            const particle = document.createElement('div');
-            particle.className = 'star-particle';
-            particle.style.cssText = `
-                position: absolute;
-                width: ${Math.random() * 4 + 2}px;
-                height: ${Math.random() * 4 + 2}px;
-                background: white;
-                border-radius: 50%;
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
-                pointer-events: none;
-                z-index: 1;
-                animation: starTwinkle ${Math.random() * 2 + 1}s ease-in-out infinite;
-                opacity: ${Math.random() * 0.8 + 0.2};
-            `;
-
-            modalContent.appendChild(particle);
-        }, i * 100);
-    }
-}
-
-// Efeito de digitação no subtítulo
-function typeWriterEffect() {
-    const subtitle = document.querySelector('.hero-subtitle');
-    if (!subtitle) return;
-
-    const text = subtitle.textContent;
-    subtitle.textContent = '';
-
-    let i = 0;
-    const timer = setInterval(() => {
-        if (i < text.length) {
-            subtitle.textContent += text.charAt(i);
-            i++;
-        } else {
-            clearInterval(timer);
-        }
-    }, 50);
-}
-
-// Preload de imagens
+// Preload de imagens da galeria
 function preloadImages() {
     galleryData.forEach(item => {
         const img = new Image();
@@ -403,60 +255,63 @@ function preloadImages() {
     });
 }
 
-// Highlight menu ativo ao scroll
-window.addEventListener('scroll', highlightActiveMenu);
-
-function highlightActiveMenu() {
+// Highlight do menu ativo com o scroll
+window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-
-    let currentSection = '';
-    const scrollPosition = window.scrollY + 100;
+    let currentSectionId = '';
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute('id');
+        if (window.scrollY >= section.offsetTop - 150) {
+            currentSectionId = section.getAttribute('id');
         }
     });
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
             link.classList.add('active');
         }
     });
-}
+});
 
-// Adicionar animação CSS para partículas
-if (!document.querySelector('#starAnimations')) {
-    const style = document.createElement('style');
-    style.id = 'starAnimations';
-    style.textContent = `
-        @keyframes starTwinkle {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-        @keyframes shootingStar {
-            0% {
-                transform: translateX(0) translateY(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(calc(100vw + 200px)) translateY(200px);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-}
+// TEMPORIZADOR
+function setupTogetherTimer() {
+    const countdownElement = document.getElementById('countdown');
+    const startDate = new Date('2024-11-23T00:00:00');
 
-console.log(' Site cósmico carregado com sucesso!');
+    function updateTimer() {
+        const now = new Date();
+        const diff = now - startDate;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `
+            <div class="countdown-block">
+                <span class="countdown-number">${days}</span>
+                <span class="countdown-label">Dias</span>
+            </div>
+            <div class="countdown-block">
+                <span class="countdown-number">${String(hours).padStart(2, '0')}</span>
+                <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-block">
+                <span class="countdown-number">${String(minutes).padStart(2, '0')}</span>
+                <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-block">
+                <span class="countdown-number">${String(seconds).padStart(2, '0')}</span>
+                <span class="countdown-label">Segundos</span>
+            </div>
+        `;
+    }
+
+    if (countdownElement) {
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    }
+}
+console.log('Site cósmico carregado com sucesso!');
