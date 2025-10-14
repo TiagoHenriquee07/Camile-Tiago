@@ -219,7 +219,7 @@ body {
 /* Navigation */
 .navbar {
     position: fixed;
-    top: 80px;
+    top: 80px; /* Ajuste se o seu header tiver altura diferente */
     left: 0;
     width: 100%;
     background: rgba(26, 26, 46, 0.6);
@@ -274,7 +274,8 @@ body {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after { /* Adicionado .active para o JS */
     width: 100%;
 }
 
@@ -326,6 +327,14 @@ body {
     gap: 3rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+}
+
+/* NOVO CSS PARA ALINHAR O CORAÇÃO */
+.names-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Ajuste o espaçamento como preferir */
 }
 
 .planet-orbit {
@@ -771,6 +780,40 @@ body {
     background-clip: text;
 }
 
+
+
+.letter-section {
+    padding: 6rem 0;
+}
+
+.letter-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    text-indent: 2rem; 
+}
+
+.letter-text:first-of-type {
+    text-indent: 0; 
+    font-weight: bold;
+    font-size: 1.3rem; 
+    font-family: 'Playfair Display', serif;
+}
+
+.letter-section .message-card {
+    padding: 3rem 4rem; 
+    text-align: left; 
+}
+
+.letter-section .signature {
+    align-items: flex-end; 
+    margin-top: 2rem;
+}
+
+
+
 /* Modal de Frases de Amor */
 .love-modal {
     position: fixed;
@@ -906,19 +949,19 @@ body {
     }
     
     .navbar {
-        top: 60px;
+        top: 60px; /* Ajustado para o novo header padding */
     }
     
     .nav-menu {
         position: fixed;
-        top: 100%;
+        top: 104px; /* Ajustado para o novo header/nav */
         left: 0;
         width: 100%;
         background: rgba(10, 10, 26, 0.95);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
-        transform: translateY(-100%);
+        transform: translateY(-150%); /* Ajustado para sair da tela */
         transition: transform 0.3s ease;
         backdrop-filter: blur(20px);
     }
@@ -938,6 +981,12 @@ body {
     .cosmic-title {
         flex-direction: column;
         gap: 2rem;
+    }
+    
+    /* MODIFICAÇÃO: Alinhar nomes e coração no mobile */
+    .names-display {
+        flex-direction: column; /* Coloca um em cima do outro */
+        gap: 1rem; /* Espaçamento menor */
     }
     
     .planet-orbit {
@@ -1000,6 +1049,16 @@ body {
     .music-btn {
         padding: 8px 12px;
         font-size: 0.8rem;
+    }
+    
+    /* Ajustes responsivos para a carta */
+    .letter-section .message-card {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .letter-text {
+        font-size: 1rem;
+        text-indent: 1.5rem;
     }
 }
 /* Estilo da Tela de Entrada (NOVO) */

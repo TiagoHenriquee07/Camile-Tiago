@@ -1,108 +1,108 @@
 const galleryData = [
-    { 
-        image: 'foto1.jpg', 
-        caption: 'Encontro Estelar', 
-        message: 'Como duas galáxias em colisão, nossas almas se encontraram em uma dança cósmica que mudou o universo para sempre.' 
+    {
+        image: 'img/img23.jpeg', 
+        caption: 'Encontro Estelar',
+        message: 'Como duas galáxias em colisão, nossas almas se encontraram em uma dança cósmica que mudou o universo para sempre.'
     },
-    { 
-        image: 'foto2.jpg', 
-        caption: 'Órbita Perfeita', 
-        message: 'Encontrei em você a gravidade que mantém meus pés no chão e minha alma nas estrelas.' 
+    {
+        image: 'img/img7.jpeg', 
+        caption: 'Órbita Perfeita',
+        message: 'Encontrei em você a gravidade que mantém meus pés no chão e minha alma nas estrelas.'
     },
-    { 
-        image: 'foto3.jpg', 
-        caption: 'Supernova do Amor', 
-        message: 'Seu amor é como uma supernova - explosivo, brilhante e capaz de iluminar até as noites mais escuras.' 
+    {
+        image: 'img/img4.jpeg', 
+        caption: 'Supernova do Amor',
+        message: 'Seu amor é como uma supernova - explosivo, brilhante e capaz de iluminar até as noites mais escuras.'
     },
-    { 
-        image: 'foto4.jpg', 
-        caption: 'Via Láctea do Sorriso', 
-        message: 'Seu sorriso é minha Via Láctea particular - uma faixa de luz que guia meus passos no universo.' 
+    {
+        image: 'img/img5.jpeg', 
+        caption: 'Via Láctea do Sorriso',
+        message: 'Seu sorriso é minha Via Láctea particular - uma faixa de luz que guia meus passos no universo.'
     },
-    { 
-        image: 'foto5.jpg', 
-        caption: 'Eclipse dos Corações', 
-        message: 'Como um eclipse total, você cobriu completamente minha vida com sua luz, tornando tudo mais belo.' 
+    {
+        image: 'img/img16.jpeg', 
+        caption: 'Eclipse dos Corações',
+        message: 'Como um eclipse total, você cobriu completamente minha vida com sua luz, tornando tudo mais belo.'
     },
-    { 
-        image: 'foto6.jpg', 
-        caption: 'Nebulosa do Carinho', 
-        message: 'Seu abraço é como uma nebulosa - aconchegante, colorido e cheio de novas possibilidades.' 
+    {
+        image: 'img/img11.jpeg', 
+        caption: 'Nebulosa do Carinho',
+        message: 'Seu abraço é como uma nebulosa - aconchegante, colorido e cheio de novas possibilidades.'
     },
-    { 
-        image: 'foto7.jpg', 
-        caption: 'Constelação do Amor', 
-        message: 'Juntos formamos nossa própria constelação, onde cada estrela é um momento especial que vivemos.' 
+    {
+        image: 'img/img14.jpeg', 
+        caption: 'Constelação do Amor',
+        message: 'Juntos formamos nossa própria constelação, onde cada estrela é um momento especial que vivemos.'
     },
-    { 
-        image: 'foto8.jpg', 
-        caption: 'Buraco Negro da Paixão', 
-        message: 'Seu amor é como um buraco negro - irresistível, poderoso e do qual nunca quero escapar.' 
+    {
+        image: 'img/img9.jpeg', 
+        caption: 'Buraco Negro da Paixão',
+        message: 'Seu amor é como um buraco negro - irresistível, poderoso e do qual nunca quero escapar.'
     },
-    { 
-        image: 'foto9.jpg', 
-        caption: 'Aurora Boreal do Afeto', 
-        message: 'Seu carinho dança em minha vida como uma aurora boreal - colorido, mágico e inesquecível.' 
+    {
+        image: 'img/img10.jpeg', 
+        caption: 'Aurora Boreal do Afeto',
+        message: 'Seu carinho dança em minha vida como uma aurora boreal - colorido, mágico e inesquecível.'
     },
-    { 
-        image: 'foto10.jpg', 
-        caption: 'Cometa da Felicidade', 
-        message: 'Como um cometa raro, você iluminou minha vida com uma beleza que só aparece uma vez na existência.' 
+    {
+        image: 'img/img3.jpeg', 
+        caption: 'Cometa da Felicidade',
+        message: 'Como um cometa raro, você iluminou minha vida com uma beleza que só aparece uma vez na existência.'
     },
-    { 
-        image: 'foto11.jpg', 
-        caption: 'Planeta do Conforto', 
-        message: 'Em seus braços encontrei meu planeta particular - um lugar seguro no vasto universo da vida.' 
+    {
+        image: 'img/img12.jpeg', 
+        caption: 'Planeta do Conforto',
+        message: 'Em seus braços encontrei meu planeta particular - um lugar seguro no vasto universo da vida.'
     },
-    { 
-        image: 'foto12.jpg', 
-        caption: 'Estrela Cadente do Destino', 
-        message: 'Nosso amor foi escrito nas estrelas cadentes - rápido, brilhante e com um pedido que se realizou.' 
+    {
+        image: 'img/img13.jpeg', 
+        caption: 'Estrela Cadente do Destino',
+        message: 'Nosso amor foi escrito nas estrelas cadentes - rápido, brilhante e com um pedido que se realizou.'
     },
-    { 
-        image: 'foto13.jpg', 
-        caption: 'Galáxia do Romance', 
-        message: 'Cada beijo seu é como descobrir uma nova galáxia - misteriosa, fascinante e cheia de maravilhas.' 
+    {
+        image: 'img/img8.jpeg', 
+        caption: 'Galáxia do Romance',
+        message: 'Cada beijo seu é como descobrir uma nova galáxia - misteriosa, fascinante e cheia de maravilhas.'
     },
-    { 
-        image: 'foto14.jpg', 
-        caption: 'Satélite Natural', 
-        message: 'Você é minha lua - sempre presente, iluminando minhas noites e controando as marés do meu coração.' 
+    {
+        image: 'img/img15.jpeg', 
+        caption: 'Satélite Natural',
+        message: 'Você é minha lua - sempre presente, iluminando minhas noites e controando as marés do meu coração.'
     },
-    { 
-        image: 'foto15.jpg', 
-        caption: 'Quasar da Paixão', 
-        message: 'Seu amor emana energia como um quasar - intensa, poderosa e visível em todo o universo.' 
+    {
+        image: 'img/img2.jpeg', 
+        caption: 'Quasar da Paixão',
+        message: 'Seu amor emana energia como um quasar - intensa, poderosa e visível em todo o universo.'
     },
-    { 
-        image: 'foto16.jpg', 
-        caption: 'Anel Planetário', 
-        message: 'Nosso amor forma anéis como os de Saturno - belos, complexos e eternamente em órbita.' 
+    {
+        image: 'img/img17.jpeg', 
+        caption: 'Anel Planetário',
+        message: 'Nosso amor forma anéis como os de Saturno - belos, complexos e eternamente em órbita.'
     },
-    { 
-        image: 'foto17.jpg', 
-        caption: 'Nebulosa da Esperança', 
-        message: 'Em seus olhos vejo nebulosas de esperança se formando, criando novas estrelas de felicidade.' 
+    {
+        image: 'img/img18.jpeg', 
+        caption: 'Nebulosa da Esperança',
+        message: 'Em seus olhos vejo nebulosas de esperança se formando, criando novas estrelas de felicidade.'
     },
-    { 
-        image: 'foto18.jpg', 
-        caption: 'Agrupamento Estelar', 
-        message: 'Nossos momentos juntos formam um agrupamento estelar - cada memória brilha mais forte quando estamos perto.' 
+    {
+        image: 'img/img19.jpeg', 
+        caption: 'Agrupamento Estelar',
+        message: 'Nossos momentos juntos formam um agrupamento estelar - cada memória brilha mais forte quando estamos perto.'
     },
-    { 
-        image: 'foto19.jpg', 
-        caption: 'Expansão Cósmica', 
-        message: 'Nosso amor se expande como o universo - sempre crescendo, sempre descobrindo novos horizontes.' 
+    {
+        image: 'img/img20.jpeg', 
+        caption: 'Expansão Cósmica',
+        message: 'Nosso amor se expande como o universo - sempre crescendo, sempre descobrindo novos horizontes.'
     },
-    { 
-        image: 'foto20.jpg', 
-        caption: 'Universo Paralelo', 
-        message: 'Com você, vivo em um universo paralelo onde só existem amor, luz e felicidade infinita.' 
+    {
+        image: 'img/img22.jpeg', 
+        caption: 'Universo Paralelo',
+        message: 'Com você, vivo em um universo paralelo onde só existem amor, luz e felicidade infinita.'
     }
 ];
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeGallery();
     setupModal();
     setupHeaderNavigation();
@@ -115,14 +115,11 @@ document.addEventListener('DOMContentLoaded', function() {
     preloadImages();
 });
 
-// Galeria Masonry
+//iniciar a galeria
+
 function initializeGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
-    
-    // Embaralhar as fotos para efeito mais orgânico
-    const shuffledData = [...galleryData].sort(() => Math.random() - 0.5);
-    
-    shuffledData.forEach((item, index) => {
+    galleryData.forEach((item, index) => {
         const galleryItem = createGalleryItem(item, index);
         galleryGrid.appendChild(galleryItem);
     });
@@ -132,11 +129,11 @@ function createGalleryItem(item, index) {
     const itemElement = document.createElement('div');
     itemElement.className = 'masonry-item';
     itemElement.setAttribute('data-index', index);
-    
+
     // Adicionar delay aleatório para animação
     const delay = Math.random() * 0.5;
     itemElement.style.animationDelay = `${delay}s`;
-    
+
     itemElement.innerHTML = `
         <img src="${item.image}" alt="${item.caption}" class="masonry-image" loading="lazy">
         <div class="masonry-overlay">
@@ -146,9 +143,9 @@ function createGalleryItem(item, index) {
             </div>
         </div>
     `;
-    
+
     itemElement.addEventListener('click', () => showLoveMessage(item.message));
-    
+
     return itemElement;
 }
 
@@ -183,15 +180,15 @@ function setupModal() {
     const modal = document.getElementById('loveModal');
     const closeModal = document.getElementById('closeModal');
     const modalOverlay = document.querySelector('.modal-overlay');
-    
+
     if (closeModal) {
         closeModal.addEventListener('click', closeLoveModal);
     }
-    
+
     if (modalOverlay) {
         modalOverlay.addEventListener('click', closeLoveModal);
     }
-    
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeLoveModal();
@@ -202,48 +199,36 @@ function setupModal() {
 function showLoveMessage(message) {
     const modal = document.getElementById('loveModal');
     const loveMessage = document.getElementById('loveMessage');
-    
+
     if (!modal || !loveMessage) {
         console.error('Modal elements not found');
         return;
     }
-    
+
     loveMessage.textContent = message;
     modal.classList.add('active');
-    
+
     // Desabilitar scroll da página
     document.body.style.overflow = 'hidden';
-    
+
     // Efeito de partículas estelares
     createStarParticles();
 }
 
 function closeLoveModal() {
     const modal = document.getElementById('loveModal');
-    
+
     if (modal) {
         modal.classList.remove('active');
-        
-        // Reabilitar scroll da página
         document.body.style.overflow = 'auto';
-        
-        // Voltar para a galeria
-        setTimeout(() => {
-            const gallerySection = document.getElementById('galeria');
-            if (gallerySection) {
-                gallerySection.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
-            }
-        }, 300);
+
     }
 }
 
 // Navegação do Header
 function setupHeaderNavigation() {
     const homeLogo = document.getElementById('homeLogo');
-    
+
     if (homeLogo) {
         homeLogo.addEventListener('click', scrollToTop);
     }
@@ -259,13 +244,13 @@ function scrollToTop() {
 // Scroll Suave
 function setupSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 targetSection.scrollIntoView({
                     behavior: 'smooth',
@@ -281,13 +266,13 @@ function setupMobileNavigation() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-        
+
         // Fechar menu ao clicar nos links
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -304,7 +289,7 @@ function setupAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -313,7 +298,7 @@ function setupAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observar elementos para animação
     const animatedElements = document.querySelectorAll('.masonry-item, .timeline-item, .quote-card, .message-card');
     animatedElements.forEach(el => {
@@ -327,13 +312,13 @@ function setupAnimations() {
 // Estrelas Cadentes
 function createShootingStars() {
     const shootingStars = document.querySelector('.shooting-stars');
-    
+
     for (let i = 0; i < 5; i++) {
         setTimeout(() => {
             createShootingStar(shootingStars);
         }, i * 3000);
     }
-    
+
     setInterval(() => {
         createShootingStar(shootingStars);
     }, 8000);
@@ -351,9 +336,9 @@ function createShootingStar(container) {
         animation: shootingStar ${Math.random() * 3 + 5}s linear forwards;
         opacity: 0;
     `;
-    
+
     container.appendChild(star);
-    
+
     setTimeout(() => {
         star.remove();
     }, 8000);
@@ -363,11 +348,11 @@ function createShootingStar(container) {
 function createStarParticles() {
     const modalContent = document.querySelector('.modal-content');
     if (!modalContent) return;
-    
+
     // Limpar partículas anteriores
     const existingParticles = modalContent.querySelectorAll('.star-particle');
     existingParticles.forEach(particle => particle.remove());
-    
+
     for (let i = 0; i < 15; i++) {
         setTimeout(() => {
             const particle = document.createElement('div');
@@ -385,7 +370,7 @@ function createStarParticles() {
                 animation: starTwinkle ${Math.random() * 2 + 1}s ease-in-out infinite;
                 opacity: ${Math.random() * 0.8 + 0.2};
             `;
-            
+
             modalContent.appendChild(particle);
         }, i * 100);
     }
@@ -395,10 +380,10 @@ function createStarParticles() {
 function typeWriterEffect() {
     const subtitle = document.querySelector('.hero-subtitle');
     if (!subtitle) return;
-    
+
     const text = subtitle.textContent;
     subtitle.textContent = '';
-    
+
     let i = 0;
     const timer = setInterval(() => {
         if (i < text.length) {
@@ -424,19 +409,19 @@ window.addEventListener('scroll', highlightActiveMenu);
 function highlightActiveMenu() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     let currentSection = '';
     const scrollPosition = window.scrollY + 100;
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             currentSection = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentSection}`) {
@@ -474,4 +459,4 @@ if (!document.querySelector('#starAnimations')) {
     document.head.appendChild(style);
 }
 
-console.log('🌌 Site cósmico carregado com sucesso!');
+console.log(' Site cósmico carregado com sucesso!');
