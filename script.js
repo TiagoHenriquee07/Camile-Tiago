@@ -25,12 +25,12 @@ const galleryData = [
         message: 'Como um eclipse total, você cobriu completamente minha vida com sua luz, tornando tudo mais belo.'
     },
     {
-        image: 'img/img11.jpeg', 
+        image: 'img/eueela.png', 
         caption: 'Nebulosa do Carinho',
         message: 'Seu abraço é como uma nebulosa - aconchegante, colorido e cheio de novas possibilidades.'
     },
     {
-        image: 'img/img14.jpeg', 
+        image: 'img/image.png', 
         caption: 'Constelação do Amor',
         message: 'Juntos formamos nossa própria constelação, onde cada estrela é um momento especial que vivemos.'
     },
