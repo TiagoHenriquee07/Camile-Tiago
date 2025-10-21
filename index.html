@@ -21,6 +21,38 @@
         </div>
     </div>
 
+    <!-- Área do Balão da Carta -->
+    <div id="letterBalloon" class="letter-balloon">
+        <div class="balloon-content">
+            <span class="balloon-text">Uma carta para você</span>
+            <div class="balloon-heart">💌</div>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-content">
+            <div class="login-header">
+                <h3>Acesso à Carta Secreta</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="login-body">
+                <p>Digite suas credenciais para acessar esta mensagem especial</p>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Usuário:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Acessar Carta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <audio id="backgroundMusic" loop>
         <source src="audio/audio.mpeg" type="audio/mpeg">
         Seu navegador não suporta áudio.
@@ -33,37 +65,6 @@
         <div class="nebula"></div>
         <div class="shooting-stars"></div>
     </div>
-
-    <header class="header" id="mainHeader">
-        <div class="header-content">
-            <div class="logo" id="homeLogo">
-                <h1>Tiago & Camile</h1>
-                <p>Amor Cósmico</p>
-            </div>
-        </div>
-    </header>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="brand-text">Navegar pela Galáxia</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Início</a></li>
-                <li><a href="#carta" class="nav-link">Uma Carta para Você</a></li>
-                <li><a href="#frase" class="nav-link">Nossa Constelação</a></li>
-                <li><a href="#galeria" class="nav-link">Galeria Estelar</a></li>
-                <li><a href="#timeline" class="nav-link">Linha do Tempo</a></li>
-                <li><a href="#mensagem" class="nav-link">Mensagem Cósmica</a></li>
-                <li><a href="#timer" class="nav-link">Nosso Tempo</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
     <main class="main-content">
         <section id="inicio" class="hero-section">
@@ -93,42 +94,6 @@
             </div>
         </section>
 
-        <section id="carta" class="letter-section">
-            <div class="container">
-                <h2 class="section-title">Para Meu Amor, Camile</h2>
-                <div class="message-card">
-                    <p class="letter-text">
-                        Minha Camile,
-                    </p>
-                    <p class="letter-text">
-                        Tentar colocar em palavras o que eu sinto por você é como tentar contar todas as estrelas no céu. Parece uma tarefa impossível, mas eu nunca vou cansar de tentar, porque cada dia ao seu lado me dá mais um milhão de motivos.
-                    </p>
-                    <p class="letter-text">
-                        Desde o momento em que nossos universos colidiram, minha vida mudou de uma forma que eu jamais poderia imaginar. Você não apenas trouxe luz para os meus dias; você se tornou a própria luz. Você é a gravidade que me mantém com os pés no chão, mas também é o sonho que me faz querer voar mais alto.
-                    </p>
-                    <p class="letter-text">
-                        Lembro-me perfeitamente da primeira vez que te vi... (Escreva aqui uma memória especial sua). Naquele instante, eu não sabia, mas uma constelação inteira estava se formando, e o destino dela era ser a nossa história.
-                    </p>
-                    <p class="letter-text">
-                        Seu sorriso tem o brilho de uma supernova, capaz de iluminar a galáxia mais escura. Seu abraço é minha nebulosa favorita, o lugar onde eu me sinto em casa, seguro e em paz. Cada risada sua é como uma estrela cadente, um desejo realizado.
-                    </p>
-                    <p class="letter-text">
-                        Você me ensinou o que é amar de verdade. Me ensinou a ver beleza nas pequenas coisas e a enfrentar os buracos negros da vida com coragem, porque eu sei que tenho você ao meu lado. Você é minha parceira de jornada cósmica, minha melhor amiga, meu tudo.
-                    </p>
-                    <p class="letter-text">
-                        Esta pequena galáxia digital é só um reflexo de tudo que você representa para mim. Cada foto, cada palavra, é uma estrela que compõe o meu amor por você.
-                    </p>
-                    <p class="letter-text">
-                        Eu te amo mais do que todas as estrelas do universo. Para sempre e além.
-                    </p>
-                    <div class="signature">
-                        <span class="signature-line"></span>
-                        <span class="signature-text">Com todo o meu amor, Tiago</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="frase" class="quote-section">
             <div class="container">
                 <div class="quote-card">
@@ -145,6 +110,7 @@
                 <h2 class="section-title">Galeria Estelar</h2>
                 <p class="section-subtitle">Passe o mouse ou clique para revelar uma mensagem cósmica</p>
                 <div class="masonry-grid" id="galleryGrid">
+                    <!-- As imagens serão carregadas pelo JavaScript -->
                 </div>
             </div>
         </section>
@@ -185,18 +151,12 @@
             </div>
         </section>
 
-        <section id="mensagem" class="message-section">
+        <section id="pets" class="gallery-section">
             <div class="container">
-                <div class="message-card">
-                    <p class="message-text">
-                        Como um buraco negro atrai toda a luz ao seu redor, você atrai todo o meu ser.
-                        No vasto vazio do cosmos, você é a matéria que preenche minha existência.
-                        Nosso amor é a força gravitacional que mantém meu universo unido.
-                    </p>
-                    <div class="signature">
-                        <span class="signature-line"></span>
-                        <span class="signature-text">Para toda a eternidade, Tiago & Camile</span>
-                    </div>
+                <h2 class="section-title">Nossos Filhos de 4 Patas</h2>
+                <p class="section-subtitle">As estrelinhas mais brilhantes da nossa casa</p>
+                <div class="pets-grid" id="petsGrid">
+                    <!-- As imagens dos pets serão carregadas pelo JavaScript -->
                 </div>
             </div>
         </section>
@@ -206,7 +166,8 @@
                 <h2 class="section-title">Nosso Tempo Juntos</h2>
                 <div class="timer-card">
                     <div id="countdown" class="countdown-container">
-                        </div>
+                        <!-- O timer será carregado pelo JavaScript -->
+                    </div>
                     <p class="timer-subtitle">... e contando cada segundo dessa jornada infinita.</p>
                 </div>
             </div>

@@ -1,317 +1,357 @@
+// Dados da galeria
 const galleryData = [
-    {
-        image: 'img/img23.jpeg', 
-        caption: 'Encontro Estelar',
-        message: 'Como duas galáxias em colisão, nossas almas se encontraram em uma dança cósmica que mudou o universo para sempre.'
-    },
-    {
-        image: 'img/img7.jpeg', 
-        caption: 'Órbita Perfeita',
-        message: 'Encontrei em você a gravidade que mantém meus pés no chão e minha alma nas estrelas.'
-    },
-    {
-        image: 'img/img4.jpeg', 
-        caption: 'Supernova do Amor',
-        message: 'Seu amor é como uma supernova - explosivo, brilhante e capaz de iluminar até as noites mais escuras.'
-    },
-    {
-        image: 'img/img5.jpeg', 
-        caption: 'Via Láctea do Sorriso',
-        message: 'Seu sorriso é minha Via Láctea particular - uma faixa de luz que guia meus passos no universo.'
-    },
-    {
-        image: 'img/img16.jpeg', 
-        caption: 'Eclipse dos Corações',
-        message: 'Como um eclipse total, você cobriu completamente minha vida com sua luz, tornando tudo mais belo.'
-    },
-    {
-        image: 'img/eueela.png', 
-        caption: 'Nebulosa do Carinho',
-        message: 'Seu abraço é como uma nebulosa - aconchegante, colorido e cheio de novas possibilidades.'
-    },
-    {
-        image: 'img/image.png', 
-        caption: 'Constelação do Amor',
-        message: 'Juntos formamos nossa própria constelação, onde cada estrela é um momento especial que vivemos.'
-    },
-    {
-        image: 'img/img9.jpeg', 
-        caption: 'Buraco Negro da Paixão',
-        message: 'Seu amor é como um buraco negro - irresistível, poderoso e do qual nunca quero escapar.'
-    },
-    {
-        image: 'img/img10.jpeg', 
-        caption: 'Aurora Boreal do Afeto',
-        message: 'Seu carinho dança em minha vida como uma aurora boreal - colorido, mágico e inesquecível.'
-    },
-    {
-        image: 'img/img3.jpeg', 
-        caption: 'Cometa da Felicidade',
-        message: 'Como um cometa raro, você iluminou minha vida com uma beleza que só aparece uma vez na existência.'
-    },
-    {
-        image: 'img/img12.jpeg', 
-        caption: 'Planeta do Conforto',
-        message: 'Em seus braços encontrei meu planeta particular - um lugar seguro no vasto universo da vida.'
-    },
-    {
-        image: 'img/img13.jpeg', 
-        caption: 'Estrela Cadente do Destino',
-        message: 'Nosso amor foi escrito nas estrelas cadentes - rápido, brilhante e com um pedido que se realizou.'
-    },
-    {
-        image: 'img/img8.jpeg', 
-        caption: 'Galáxia do Romance',
-        message: 'Cada beijo seu é como descobrir uma nova galáxia - misteriosa, fascinante e cheia de maravilhas.'
-    },
-    {
-        image: 'img/img15.jpeg', 
-        caption: 'Satélite Natural',
-        message: 'Você é minha lua - sempre presente, iluminando minhas noites e controando as marés do meu coração.'
-    },
-    {
-        image: 'img/img2.jpeg', 
-        caption: 'Quasar da Paixão',
-        message: 'Seu amor emana energia como um quasar - intensa, poderosa e visível em todo o universo.'
-    },
-    {
-        image: 'img/img17.jpeg', 
-        caption: 'Anel Planetário',
-        message: 'Nosso amor forma anéis como os de Saturno - belos, complexos e eternamente em órbita.'
-    },
-    {
-        image: 'img/img18.jpeg', 
-        caption: 'Nebulosa da Esperança',
-        message: 'Em seus olhos vejo nebulosas de esperança se formando, criando novas estrelas de felicidade.'
-    },
-    {
-        image: 'img/img19.jpeg', 
-        caption: 'Agrupamento Estelar',
-        message: 'Nossos momentos juntos formam um agrupamento estelar - cada memória brilha mais forte quando estamos perto.'
-    },
-    {
-        image: 'img/img20.jpeg', 
-        caption: 'Expansão Cósmica',
-        message: 'Nosso amor se expande como o universo - sempre crescendo, sempre descobrindo novos horizontes.'
-    },
-    {
-        image: 'img/img22.jpeg', 
-        caption: 'Universo Paralelo',
-        message: 'Com você, vivo em um universo paralelo onde só existem amor, luz e felicidade infinita.'
-    }
+    { image: 'img/eueela.png', caption: 'Nossa Conexão', message: 'Dois corações batendo como um só' },
+    { image: 'img/image.png', caption: 'Momento Especial', message: 'Cada instante contigo é único' },
+    { image: 'img/img2.jpeg', caption: 'Risos Compartilhados', message: 'A alegria que encontro no seu sorriso' },
+    { image: 'img/img3.jpeg', caption: 'Aventuras Juntos', message: 'Explorando o mundo de mãos dadas' },
+    { image: 'img/img4.jpeg', caption: 'Olhares que Encantam', message: 'Nos seus olhos encontro meu lar' },
+    { image: 'img/img5.jpeg', caption: 'Momentos de Doçura', message: 'A suavidade do nosso amor' },
+    { image: 'img/img6.jpeg', caption: 'Conexão Eterna', message: 'Almas gêmeas em sintonia perfeita' },
+    { image: 'img/img7.jpeg', caption: 'Sorrisos Sinceros', message: 'A felicidade que transborda' },
+    { image: 'img/img8.jpeg', caption: 'Parceria de Vida', message: 'Juntos em cada desafio' },
+    { image: 'img/img9.jpeg', caption: 'Amor em Cada Detalhe', message: 'Nos pequenos gestos, o amor maior' },
+    { image: 'img/img10.jpeg', caption: 'Constelação do Amor', message: 'Nossa história escrita nas estrelas' },
+    { image: 'img/img12.jpeg', caption: 'Abraços que Aconchegam', message: 'No seu abraço, encontro paz' },
+    { image: 'img/img13.jpeg', caption: 'Sonhos Compartilhados', message: 'Construindo nosso futuro' },
+    { image: 'img/img15.jpeg', caption: 'Alegrias Multiplicadas', message: 'A felicidade é maior ao seu lado' },
+    { image: 'img/img16.jpeg', caption: 'Momentos Únicos', message: 'Memórias que guardo no coração' },
+    { image: 'img/img17.jpeg', caption: 'Cumplicidade Eterna', message: 'Sócios na vida e no amor' },
+    { image: 'img/img18.jpeg', caption: 'Paixão que Persiste', message: 'O fogo que nunca se apaga' },
+    { image: 'img/img19.jpeg', caption: 'Dois Corações', message: 'Batendo no mesmo ritmo' },
+    { image: 'img/img20.jpeg', caption: 'Jornada de Amor', message: 'Cada passo dado juntos' },
+    { image: 'img/img21.jpeg', caption: 'Eternidade em Olhares', message: 'O infinito nos seus olhos' },
+    { image: 'img/img22.jpeg', caption: 'Harmonia Perfeita', message: 'Dois seres, uma só alma' },
+    { image: 'img/img23.jpeg', caption: 'Amor que Transforma', message: 'Você mudou meu universo' }
+];
+
+// Dados dos pets
+const petImages = [
+    './img/ig7.jpeg', './img/ig15.jpeg', './img/ig3.jpeg', './img/ig11.jpeg',
+    './img/bob.jpeg', './img/bob2.jpeg', './img/ig9.jpeg', './img/ig5.jpeg',
+    './img/ig14.jpeg', './img/ig2.jpeg', './img/ig16.jpeg', './img/ig8.jpeg',
+    './img/ig12.jpeg', './img/ig6.jpeg', './img/ig17.jpeg', './img/ig10.jpeg',
+    './img/ig4.jpeg', './img/ig13.jpeg', './img/ig1.jpeg'
 ];
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function () {
     initializeGallery();
-    setupHeaderNavigation();
-    setupSmoothScrolling();
-    setupMobileNavigation();
+    initializePetsGallery();
     setupEntry();
     setupAnimations();
     setupTogetherTimer();
     preloadImages();
+    setupLetterBalloon();
+    setupLoginModal();
+    setupSmoothScrolling();
 });
 
-// Iniciar a galeria
+// Função para o balão da carta
+function setupLetterBalloon() {
+    const balloon = document.getElementById('letterBalloon');
+    const loginModal = document.getElementById('loginModal');
+
+    if (balloon && loginModal) {
+        balloon.addEventListener('click', function () {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+}
+
+// Função para o modal de login
+
+function setupLoginModal() {
+    const loginModal = document.getElementById('loginModal');
+    const closeModal = document.querySelector('.close-modal');
+    const loginForm = document.getElementById('loginForm');
+
+    // Fechar modal 
+    if (closeModal) {
+        closeModal.addEventListener('click', function () {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+
+    // Processar formulário de login
+    if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificar credenciais
+            if (username.toLowerCase() === 'camiletiago' && password === '23112024') {
+                //  abrir carta em nova aba
+                window.open('carta.html', '_blank');
+                loginModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                loginForm.reset();
+            } else {
+                // Credenciais incorretas
+                alert('Usuário ou senha incorretos. Tente novamente.');
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        });
+    }
+}
+
+
+// Processar formulário de login
+if (loginForm) {
+    loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Verificar credenciais
+        if (username.toLowerCase() === 'camiletiago' && password === '23112024') {
+            window.open('carta.html', '_blank');
+            loginModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            loginForm.reset();
+        } else {
+            alert('Usuário ou senha incorretos. Tente novamente.');
+            document.getElementById('password').value = '';
+            document.getElementById('password').focus();
+        }
+    });
+}
+
+
+// Inicializar galeria
 function initializeGallery() {
     const galleryGrid = document.getElementById('galleryGrid');
+    if (!galleryGrid) return;
+
+    galleryGrid.innerHTML = '';
+
     galleryData.forEach((item, index) => {
         const galleryItem = createGalleryItem(item, index);
         galleryGrid.appendChild(galleryItem);
     });
-
-    // Adiciona lógica de clique para mobile
-    const allItems = document.querySelectorAll('.masonry-item');
-    allItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Se já está ativo, o clique o desativa
-            if (this.classList.contains('active')) {
-                this.classList.remove('active');
-            } else {
-                // Remove a classe de todos os outros itens
-                allItems.forEach(otherItem => otherItem.classList.remove('active'));
-                // Adiciona a classe apenas no item clicado
-                this.classList.add('active');
-            }
-            e.stopPropagation(); 
-        });
-    });
-
-    // Clicar em qualquer lugar fora das imagens fecha a mensagem ativa
-    document.body.addEventListener('click', function() {
-        allItems.forEach(item => item.classList.remove('active'));
-    });
 }
-
 
 function createGalleryItem(item, index) {
-    const itemElement = document.createElement('div');
-    itemElement.className = 'masonry-item';
-    itemElement.setAttribute('data-index', index);
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'masonry-item';
+    itemDiv.style.animationDelay = `${index * 0.1}s`;
 
-    const delay = Math.random() * 0.5;
-    itemElement.style.animationDelay = `${delay}s`;
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.caption;
+    img.className = 'masonry-image';
+    img.loading = 'lazy';
 
-    // efeito hover/clique
-    itemElement.innerHTML = `
-        <img src="${item.image}" alt="${item.caption}" class="masonry-image" loading="lazy">
-        <div class="masonry-overlay">
-            <p class="masonry-caption">${item.caption}</p>
-            <p class="masonry-message">${item.message}</p>
-        </div>
-    `;
-    
-    return itemElement;
+    img.onload = function () {
+        img.classList.add('loaded');
+    };
+
+    const overlay = document.createElement('div');
+    overlay.className = 'masonry-overlay';
+
+    const caption = document.createElement('div');
+    caption.className = 'masonry-caption';
+    caption.textContent = item.caption;
+
+    const message = document.createElement('div');
+    message.className = 'masonry-message';
+    message.textContent = item.message;
+
+    overlay.appendChild(caption);
+    overlay.appendChild(message);
+    itemDiv.appendChild(img);
+    itemDiv.appendChild(overlay);
+
+    itemDiv.addEventListener('click', function () {
+        this.classList.toggle('active');
+    });
+
+    return itemDiv;
 }
 
+// Inicializar galeria de pets
+function initializePetsGallery() {
+    const petsGrid = document.getElementById('petsGrid');
+    if (!petsGrid) return;
 
+    petsGrid.innerHTML = '';
+
+    petImages.forEach((imageSrc, index) => {
+        const petItem = document.createElement('div');
+        petItem.className = 'pet-item';
+        petItem.style.animationDelay = `${index * 0.1}s`;
+
+        const petImage = document.createElement('img');
+        petImage.src = imageSrc;
+        petImage.alt = 'Nossos momentos especiais';
+        petImage.className = 'pet-image';
+        petImage.loading = 'lazy';
+
+        petImage.onload = function () {
+            petImage.classList.add('loaded');
+        };
+
+        petItem.appendChild(petImage);
+        petsGrid.appendChild(petItem);
+    });
+}
+
+// Configurar entrada
 function setupEntry() {
     const entryOverlay = document.getElementById('entryOverlay');
     const enterButton = document.getElementById('enterButton');
     const backgroundMusic = document.getElementById('backgroundMusic');
 
-    if (enterButton && backgroundMusic && entryOverlay) {
-        backgroundMusic.volume = 0.3;
-
+    if (enterButton && entryOverlay) {
         enterButton.addEventListener('click', () => {
-            backgroundMusic.play().catch(e => console.error("Música bloqueada:", e));
             entryOverlay.style.opacity = '0';
             setTimeout(() => {
                 entryOverlay.style.display = 'none';
+                if (backgroundMusic) {
+                    backgroundMusic.volume = 0.3;
+                    backgroundMusic.play().catch(e => {
+                        console.log('Reprodução automática bloqueada');
+                    });
+                }
             }, 1000);
         });
     }
 }
 
-// Navegação do Header
-function setupHeaderNavigation() {
-    const homeLogo = document.getElementById('homeLogo');
-    if (homeLogo) {
-        homeLogo.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    }
-}
-
-// Scroll Suave
-function setupSmoothScrolling() {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-}
-
-// Navegação Mobile
-function setupMobileNavigation() {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-}
-
-
+// Configurar animações
 function setupAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.masonry-item, .timeline-item, .quote-card, .timer-card, .message-card, .letter-section .message-card');
+    const animatedElements = document.querySelectorAll('.masonry-item, .timeline-item, .quote-card, .message-card, .pet-item');
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.animationPlayState = 'paused';
         observer.observe(el);
     });
 }
 
-// Preload de imagens da galeria
+// Configurar scroll suave
+function setupSmoothScrolling() {
+    const cosmicScroll = document.querySelector('.cosmic-scroll');
+    if (cosmicScroll) {
+        cosmicScroll.addEventListener('click', function (e) {
+            e.preventDefault();
+            const fraseSection = document.getElementById('frase');
+            if (fraseSection) {
+                fraseSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+}
+
+// Configurar timer
+
+function setupTogetherTimer() {
+    const countdownContainer = document.getElementById('countdown');
+    if (!countdownContainer) return;
+
+
+    const startDate = new Date('2024-11-23T00:00:00');
+
+    function updateTimer() {
+        const now = new Date();
+        const diff = startDate - now;
+        if (diff <= 0) {
+
+            const timeTogether = now - startDate;
+            const years = Math.floor(timeTogether / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((timeTogether % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((timeTogether % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeTogether % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeTogether % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeTogether % (1000 * 60)) / 1000);
+
+            countdownContainer.innerHTML = `
+                <div class="countdown-block">
+                    <div class="countdown-number">${years}</div>
+                    <div class="countdown-label">Anos</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${months}</div>
+                    <div class="countdown-label">Meses</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${days}</div>
+                    <div class="countdown-label">Dias</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${hours}</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${minutes}</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${seconds}</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            `;
+        } else {
+            // Se ainda não chegou na data, mostrar contagem regressiva
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            countdownContainer.innerHTML = `
+                <div class="countdown-block">
+                    <div class="countdown-number">${days}</div>
+                    <div class="countdown-label">Dias</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${hours}</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${minutes}</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-block">
+                    <div class="countdown-number">${seconds}</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            `;
+        }
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+// Pré-carregar imagens
 function preloadImages() {
     galleryData.forEach(item => {
         const img = new Image();
         img.src = item.image;
     });
-}
 
-// Highlight do menu ativo com o scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    let currentSectionId = '';
-
-    sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 150) {
-            currentSectionId = section.getAttribute('id');
-        }
+    petImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
     });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSectionId}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// TEMPORIZADOR
-function setupTogetherTimer() {
-    const countdownElement = document.getElementById('countdown');
-    const startDate = new Date('2024-11-23T00:00:00');
-
-    function updateTimer() {
-        const now = new Date();
-        const diff = now - startDate;
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        countdownElement.innerHTML = `
-            <div class="countdown-block">
-                <span class="countdown-number">${days}</span>
-                <span class="countdown-label">Dias</span>
-            </div>
-            <div class="countdown-block">
-                <span class="countdown-number">${String(hours).padStart(2, '0')}</span>
-                <span class="countdown-label">Horas</span>
-            </div>
-            <div class="countdown-block">
-                <span class="countdown-number">${String(minutes).padStart(2, '0')}</span>
-                <span class="countdown-label">Minutos</span>
-            </div>
-            <div class="countdown-block">
-                <span class="countdown-number">${String(seconds).padStart(2, '0')}</span>
-                <span class="countdown-label">Segundos</span>
-            </div>
-        `;
-    }
-
-    if (countdownElement) {
-        updateTimer();
-        setInterval(updateTimer, 1000);
-    }
 }
-console.log('Site cósmico carregado com sucesso!');
